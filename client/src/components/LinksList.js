@@ -6,6 +6,7 @@ export const LinksList = ({ links }) => {
         <table className="highlight">
             <thead>
                 <tr>
+                    <th>№</th>
                     <th>Source link</th>
                     <th>Shortened link</th>
                     <th>Details</th>
@@ -13,15 +14,25 @@ export const LinksList = ({ links }) => {
             </thead>
 
             <tbody>
-                { links.map((link) => {
-                    return (
+                { 
+                    links.length ? 
+                        links.map((link, index) => {
+                        return (
+                            <tr key={link._id}>
+                                <td>{index + 1}</td>
+                                <td><a href="{link.to}" target="_blank" rel="noopener noreferrer">{link.to}</a></td>
+                                <td><a href="{link.from}" target="_blank" rel="noopener noreferrer">{link.from}</a></td>
+                                <td><NavLink to={`/details/${link._id}`}>View stats</NavLink></td>
+                            </tr>
+                        )
+                    })
+                    :
+                    (
                         <tr>
-                            <td><a href="{link.to}" target="_blank" rel="noopener noreferrer">{link.to}</a></td>
-                            <td><a href="{link.from}" target="_blank" rel="noopener noreferrer">{link.from}</a></td>
-                            <td><NavLink to={`/details/${link._id}`}>View stats</NavLink></td>
+                            <td colSpan="4">You don't have any links yet</td>
                         </tr>
                     )
-                }) }
+                }
             </tbody>
         </table>
     )
