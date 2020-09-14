@@ -9,6 +9,7 @@ This is test MERN application.
 `{
     "port": 5000,
     "mongoUri": "<YOUR_MONGODB_CONNECT_URL>",
-    "jwtSecret": "<YOUR_SECRET>"
+    "jwtSecret": "<YOUR_SECRET>",
+    "baseUrl": "http://localhost:5000"
 }`
 1. Start app with `npm run dev`
