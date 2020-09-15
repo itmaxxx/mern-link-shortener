@@ -7,8 +7,8 @@ export const LinksList = ({ links }) => {
             <thead>
                 <tr>
                     <th>№</th>
-                    <th>Source link</th>
                     <th>Shortened link</th>
+                    <th>Source link</th>
                     <th>Details</th>
                 </tr>
             </thead>
@@ -20,8 +20,8 @@ export const LinksList = ({ links }) => {
                         return (
                             <tr key={link._id}>
                                 <td>{index + 1}</td>
-                                <td><a href="{link.to}" target="_blank" rel="noopener noreferrer">{link.to}</a></td>
-                                <td><a href="{link.from}" target="_blank" rel="noopener noreferrer">{link.from}</a></td>
+                                <td><a href={link.from} target="_blank" rel="noopener noreferrer">{link.from}</a></td>
+                                <td><a href={link.to} target="_blank" rel="noopener noreferrer">{link.to}</a></td>
                                 <td><NavLink to={`/details/${link._id}`}>View stats</NavLink></td>
                             </tr>
                         )
