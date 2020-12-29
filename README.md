@@ -1,10 +1,10 @@
 # Hi there :)
 
-This is test MERN application.
+So, I created MERN app, following tutorial.
 
 ## Setup
 
-1. Create config file in `config` folder called `default.js`
+1. Create `default.js` in `/config`
 1. Put something like
 `{
     "port": 5000,
@@ -12,4 +12,4 @@ This is test MERN application.
     "jwtSecret": "<YOUR_SECRET>",
     "baseUrl": "http://localhost:5000"
 }`
-1. Start app with `npm run dev`
+1. Start dev with `npm run dev`
